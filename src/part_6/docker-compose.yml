@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  nginx_server:
+    image: nginx
+    build: ./nginx_server/
+    container_name: nginx_container
+    ports:
+      - "80:8080"
+
+  fcgi_server:
+    build: ./fcgi_server/
+    container_name: fcgi_container
+    ports:
+      - "8080:8080"
